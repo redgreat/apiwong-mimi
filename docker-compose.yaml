@@ -1,0 +1,17 @@
+version: "2"
+services:
+  apiwong:
+    image: apiwong:latest
+    container_name: apiwong
+    restart: always
+    ports:
+      - "3010:80"
+    volumes:
+      - ./logs:/apiwong/logs
+    links:
+      - rediswong
+
+  rediswong:
+    image: redis:alpine
+    container_name: rediswong
+    restart: always
