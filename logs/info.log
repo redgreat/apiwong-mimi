@@ -1,0 +1,598 @@
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 248-405-633
+127.0.0.1 - - [25/May/2023 17:23:25] "[33mGET / HTTP/1.1[0m" 404 -
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 248-405-633
+127.0.0.1 - - [26/May/2023 13:07:54] "[33mGET / HTTP/1.1[0m" 404 -
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 248-405-633
+127.0.0.1 - - [26/May/2023 13:40:54] "[33mGET / HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/May/2023 13:42:54] "[33mGET /test HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/May/2023 13:43:18] "[33mGET /testdb HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/May/2023 13:51:26] "[33mGET /test HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/May/2023 13:51:29] "[33mGET /test HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/May/2023 13:51:57] "[33mGET /test HTTP/1.1[0m" 404 -
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 248-405-633
+127.0.0.1 - - [26/May/2023 13:57:36] "[33mGET /test HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/May/2023 13:57:37] "[33mGET /test HTTP/1.1[0m" 404 -
+this is info
+this is warning
+this is error
+this is critical
+Exception on /testRedisWrite [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 492, in connect
+    sock = self._connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 519, in _connect
+    for res in socket.getaddrinfo(self.host, self.port, self.socket_type,
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/eventlet/support/greendns.py", line 537, in getaddrinfo
+    raise socket.gaierror(socket.EAI_NONAME, 'No address found')
+socket.gaierror: [Errno 8] No address found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 97, in test_redis_write
+    Redis.write("test_key", "test_value", 60)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 109, in write
+    r.set(key, value, ex=expire_in_seconds)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 1451, in set
+    return self.execute_command('SET', *pieces)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 772, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 497, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to flask_redis:6379. No address found.
+Exception on /testRedisWrite [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 492, in connect
+    sock = self._connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 519, in _connect
+    for res in socket.getaddrinfo(self.host, self.port, self.socket_type,
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/eventlet/support/greendns.py", line 537, in getaddrinfo
+    raise socket.gaierror(socket.EAI_NONAME, 'No address found')
+socket.gaierror: [Errno 8] No address found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 97, in test_redis_write
+    Redis.write("test_key", "test_value", 60)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 109, in write
+    r.set(key, value, ex=expire_in_seconds)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 1451, in set
+    return self.execute_command('SET', *pieces)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 772, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 497, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 8 connecting to flask_redis:6379. No address found.
+Exception on /testRedisWrite [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 97, in test_redis_write
+    Redis.write("test_key", "test_value", 60)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 109, in write
+    r.set(key, value, ex=expire_in_seconds)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 1451, in set
+    return self.execute_command('SET', *pieces)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 772, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 502, in connect
+    self.on_connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 576, in on_connect
+    if nativestr(self.read_response()) != 'OK':
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 642, in read_response
+    raise response
+redis.exceptions.ResponseError: NOAUTH Authentication required.
+Exception on /testRedisWrite [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 97, in test_redis_write
+    Redis.write("test_key", "test_value", 60)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 110, in write
+    r.set(key, value, ex=expire_in_seconds)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 1451, in set
+    return self.execute_command('SET', *pieces)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 772, in execute_command
+    connection = pool.get_connection(command_name, **options)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 502, in connect
+    self.on_connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 570, in on_connect
+    if nativestr(self.read_response()) != 'OK':
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 642, in read_response
+    raise response
+redis.exceptions.ResponseError: WRONGPASS invalid username-password pair or user is disabled.
+Exception on /testCeleryAdd [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/kombu/connection.py", line 448, in _reraise_as_library_errors
+    yield
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/app/base.py", line 748, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/backends/redis.py", line 343, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/backends/redis.py", line 159, in consume_from
+    return self.start(task_id)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/backends/redis.py", line 137, in start
+    self._consume_from(initial_task_id)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 3096, in subscribe
+    ret_val = self.execute_command('SUBSCRIBE', *iterkeys(new_channels))
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 3001, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 502, in connect
+    self.on_connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 576, in on_connect
+    if nativestr(self.read_response()) != 'OK':
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 642, in read_response
+    raise response
+redis.exceptions.ResponseError: NOAUTH Authentication required.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 437, in test_add
+    result = add.delay(1, 2)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/app/task.py", line 421, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/app/task.py", line 561, in apply_async
+    return app.send_task(
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/app/base.py", line 749, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 135, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/kombu/connection.py", line 452, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: NOAUTH Authentication required.
+Exception on /testCeleryAdd [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/kombu/connection.py", line 448, in _reraise_as_library_errors
+    yield
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/app/base.py", line 748, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/backends/redis.py", line 343, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/backends/redis.py", line 159, in consume_from
+    return self.start(task_id)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/backends/redis.py", line 137, in start
+    self._consume_from(initial_task_id)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 3096, in subscribe
+    ret_val = self.execute_command('SUBSCRIBE', *iterkeys(new_channels))
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/client.py", line 3001, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 502, in connect
+    self.on_connect()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 576, in on_connect
+    if nativestr(self.read_response()) != 'OK':
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/redis/connection.py", line 642, in read_response
+    raise response
+redis.exceptions.ResponseError: NOAUTH Authentication required.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 437, in test_add
+    result = add.delay(1, 2)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/app/task.py", line 421, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/app/task.py", line 561, in apply_async
+    return app.send_task(
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/celery/app/base.py", line 749, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 135, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/wangcw/Documents/github/apiwong/venv/lib/python3.9/site-packages/kombu/connection.py", line 452, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: NOAUTH Authentication required.
+Exception on /testCeleryAdd [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/kombu/connection.py", line 448, in _reraise_as_library_errors
+    yield
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/base.py", line 748, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 343, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 159, in consume_from
+    return self.start(task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 137, in start
+    self._consume_from(initial_task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 3096, in subscribe
+    ret_val = self.execute_command('SUBSCRIBE', *iterkeys(new_channels))
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 3001, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 502, in connect
+    self.on_connect()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 576, in on_connect
+    if nativestr(self.read_response()) != 'OK':
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 642, in read_response
+    raise response
+redis.exceptions.ResponseError: NOAUTH Authentication required.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 437, in test_add
+    result = add.delay(1, 2)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/task.py", line 421, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/task.py", line 561, in apply_async
+    return app.send_task(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/base.py", line 749, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/opt/homebrew/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/kombu/connection.py", line 452, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: NOAUTH Authentication required.
+Exception on /testCeleryAdd [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/kombu/connection.py", line 448, in _reraise_as_library_errors
+    yield
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/base.py", line 748, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 343, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 159, in consume_from
+    return self.start(task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 137, in start
+    self._consume_from(initial_task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 167, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 3096, in subscribe
+    ret_val = self.execute_command('SUBSCRIBE', *iterkeys(new_channels))
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 3001, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 994, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 502, in connect
+    self.on_connect()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 576, in on_connect
+    if nativestr(self.read_response()) != 'OK':
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 642, in read_response
+    raise response
+redis.exceptions.ResponseError: NOAUTH Authentication required.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 437, in test_add
+    result = add.delay(1, 2)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/task.py", line 421, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/task.py", line 561, in apply_async
+    return app.send_task(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/base.py", line 749, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/opt/homebrew/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/kombu/connection.py", line 452, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: NOAUTH Authentication required.
+Exception on /testCeleryAdd [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 988, in get_connection
+    connection = self._available_connections.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 437, in test_add
+    result = add.delay(1, 2)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/task.py", line 425, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/task.py", line 575, in apply_async
+    return app.send_task(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/base.py", line 787, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 365, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 161, in consume_from
+    return self.start(task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 139, in start
+    self._consume_from(initial_task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 169, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 3096, in subscribe
+    ret_val = self.execute_command('SUBSCRIBE', *iterkeys(new_channels))
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 3001, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 990, in get_connection
+    connection = self.make_connection()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 1025, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+TypeError: __init__() got an unexpected keyword argument 'username'
+Connection to Redis lost: Retry (0/20) now.
+Connection to Redis lost: Retry (1/20) in 1.00 second.
+Connection to Redis lost: Retry (2/20) in 1.00 second.
+Connection to Redis lost: Retry (3/20) in 1.00 second.
+Connection to Redis lost: Retry (4/20) in 1.00 second.
+Connection to Redis lost: Retry (5/20) in 1.00 second.
+Connection to Redis lost: Retry (6/20) in 1.00 second.
+Connection to Redis lost: Retry (7/20) in 1.00 second.
+Connection to Redis lost: Retry (8/20) in 1.00 second.
+Connection to Redis lost: Retry (9/20) in 1.00 second.
+Connection to Redis lost: Retry (10/20) in 1.00 second.
+Connection to Redis lost: Retry (11/20) in 1.00 second.
+Connection to Redis lost: Retry (12/20) in 1.00 second.
+Connection to Redis lost: Retry (13/20) in 1.00 second.
+Connection to Redis lost: Retry (14/20) in 1.00 second.
+Connection to Redis lost: Retry (15/20) in 1.00 second.
+Connection to Redis lost: Retry (16/20) in 1.00 second.
+Connection to Redis lost: Retry (17/20) in 1.00 second.
+Connection to Redis lost: Retry (18/20) in 1.00 second.
+Connection to Redis lost: Retry (19/20) in 1.00 second.
+
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+Exception on /testCeleryAdd [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 119, in reconnect_on_error
+    yield
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 169, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 1634, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 1469, in execute_command
+    self.connection = self.connection_pool.get_connection(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 711, in connect
+    self.on_connect()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 755, in on_connect
+    auth_response = self.read_response()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 874, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 347, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 370, in _read_response
+    raise error
+redis.exceptions.AuthenticationError: invalid username-password pair or user is disabled.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/kombu/connection.py", line 446, in _reraise_as_library_errors
+    yield
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/base.py", line 787, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 365, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 161, in consume_from
+    return self.start(task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 139, in start
+    self._consume_from(initial_task_id)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 169, in _consume_from
+    self._pubsub.subscribe(key)
+  File "/opt/homebrew/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 122, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 376, in ensure
+    return retry_over_time(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 312, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/redis.py", line 106, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/commands/core.py", line 1987, in mget
+    return self.execute_command("MGET", *args, **options)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 1457, in get_connection
+    connection.connect()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 711, in connect
+    self.on_connect()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 755, in on_connect
+    auth_response = self.read_response()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 874, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 347, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/redis/connection.py", line 370, in _read_response
+    raise error
+redis.exceptions.AuthenticationError: invalid username-password pair or user is disabled.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 437, in test_add
+    result = add.delay(1, 2)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/task.py", line 425, in delay
+    return self.apply_async(args, kwargs)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/task.py", line 575, in apply_async
+    return app.send_task(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/app/base.py", line 788, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/opt/homebrew/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/kombu/connection.py", line 450, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: invalid username-password pair or user is disabled.
+Exception on /testCeleryFlaskAppContext [GET]
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/asynchronous.py", line 287, in _wait_for_pending
+    for _ in self.drain_events_until(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/asynchronous.py", line 52, in drain_events_until
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/wangcw/Documents/github/apiwong/app/utils/util.py", line 28, in wrapper
+    rv = f(*args, **kwargs)
+  File "/Users/wangcw/Documents/github/apiwong/app/api/api_test.py", line 448, in test_flask_app_context
+    return result.get(timeout=1)
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/result.py", line 224, in get
+    return self.backend.wait_for_pending(
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/asynchronous.py", line 221, in wait_for_pending
+    for _ in self._wait_for_pending(result, **kwargs):
+  File "/Users/wangcw/Documents/github/flask-restful-mini/venv/lib/python3.8/site-packages/celery/backends/asynchronous.py", line 293, in _wait_for_pending
+    raise TimeoutError('The operation timed out.')
+celery.exceptions.TimeoutError: The operation timed out.
