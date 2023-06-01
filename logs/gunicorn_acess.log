@@ -1,6 +1,0 @@
-127.0.0.1 - - [31/May/2023:16:51:00 +0800] "GET /testCeleryAdd HTTP/1.1" 500 265 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0"
-127.0.0.1 - - [31/May/2023:16:52:40 +0800] "GET /testCeleryAdd HTTP/1.1" 200 4 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0"
-127.0.0.1 - - [31/May/2023:16:53:39 +0800] "GET /testCeleryFlaskAppContext HTTP/1.1" 200 2947 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0"
-127.0.0.1 - - [01/Jun/2023:08:37:47 +0800] "GET /testCeleryFlaskAppContext HTTP/1.1" 500 265 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0"
-127.0.0.1 - - [01/Jun/2023:08:39:01 +0800] "GET /testCeleryFlaskAppContext HTTP/1.1" 200 2947 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0"
-127.0.0.1 - - [01/Jun/2023:08:39:12 +0800] "GET /testCeleryFlaskAppContext HTTP/1.1" 200 2947 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0"
