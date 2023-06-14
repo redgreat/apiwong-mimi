@@ -1,5 +1,5 @@
-from app.api.api_test import bp as bp_api_test
+from app.api.locapi import bp as bp_locapi
 
 router = [
-    bp_api_test,  # 接口测试
+    bp_locapi,  #定位获取接口
 ]
